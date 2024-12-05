@@ -17,16 +17,11 @@ number-sections: true
 
 
 # Introduction
-
-Overview paragraph
-
-Estimand paragrap
-
-Results paragraph
-
-Why it matters paragraph
-
-Telegraphing paragraph: The remainder of this paper is structured as follows.
+|     Alzheimer's disease is a progressive disease that affects the brain and is the most common type of dementia, affecting between 60-70$\%$ of patients. It is characterized by the gradual loss of cognitive, behavioral, and functional skills due to the deposition of beta-amyloid plaques and tau proteins in the brain.
+|     Although the mechanism of AD development is not fully known, the contribution of genetic background, environmental influences, and lifestyle factors has been suggested. The Lancet Commission identified 12 modifiable risk factors, of which hypertension, diabetes, physical inactivity, and smoking alone contribute to 40$\%$ of the global dementia burden. In addition, structural brain changes and cognitive markers, such as loss of memory and spatial judgment, have been recognized as some of the earliest signs of the disease.
+|     Alzheimer's disease is prevalent, and it is estimated that more than 55 million people are affected by the disease globally. This number is expected to triple by 2050 because of the increasing number of older people. Although AD is becoming more common, it is still not detected very often across the globe, especially in developing countries where undetected cases of AD are greater than 90$\%$. However, most diagnoses are made at moderate to severe stages, leading to limited treatment effectiveness, and the impact of available treatments will be significantly reduced.
+|     Due to its high incidence, long preclinical period, and the absence of effective treatments, early diagnosis is crucial. It allows intervention measures to reduce disease progression and enhance patient outcomes. This involves developing easy, efficient, and cost-effective screening tools that do not need the presence of specialist medical personnel and can be done in the community. These should have high accuracy and a low rate of false negative findings so that the right people are referred to specialized healthcare facilities for evaluation.
+|     The aim of this project is to develop a statistical and machine-learning model for the early classification of Alzheimer's disease. The data we will use in this model will be demographical, behavioral, and cognitive. It will classify the individuals as having a high or low risk of developing the disease. In order to identify the most effective factors for Alzheimer's disease, we will use logistic regression, XGBoost, and feature selection models. At the same time, we will try to make the model efficient and easy to apply. The ultimate goal is to design a tool for community screening of Alzheimer's and related disorders that can link the gap of underdiagnosis and early intervention to enhance care and management of the disease.
 
 
 
