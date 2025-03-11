@@ -14,6 +14,10 @@ Provide an organized framework for replicable analysis, including data preproces
 
 Since the total number of files are small, for coding convinience, all files (data files, notebooks and paper files) are in one single folder.
 
+# Paper File
+
+EARLY DETECTION OF ALZHEIMER'S DISEASE.pdf
+
 # Data Files
 
 train.csv: Training dataset for model development.
