@@ -1,46 +1,61 @@
-# Project Overview
+# Early Detection of Alzheimer's Disease: From Logistic Regression to XGBoost
 
-Early detection of Alzheimer’s disease is crucial for timely intervention and treatment planning. This project explores various machine learning techniques, aiming to accurately predict the presence or progression of Alzheimer’s. We use both classical and ensemble-based models.
+Course project for STA314 (Fall 2024), submitted to the course Kaggle competition.
+We fit and compare logistic regression and XGBoost for binary classification of
+Alzheimer's disease from demographic, lifestyle, clinical, and cognitive features.
 
-The goal is to:
+**Team "Vegetable Dogs":** Haocheng Sun, Chi Zhang, Xile Chen
 
-Compare model performance (accuracy, sensitivity, specificity) across Logistic Regression, XGBoost, and Random Forest.
+Full write-up: [`report/early_detection_of_alzheimers_disease.pdf`](report/early_detection_of_alzheimers_disease.pdf)
 
-Identify key features for Alzheimer’s disease detection.
+## Results
 
-Provide an organized framework for replicable analysis, including data preprocessing, model training, hyperparameter tuning, and evaluation.
+| Model | Accuracy | Precision | FPR | FNR | ROC AUC |
+|---|---|---|---|---|---|
+| Logistic regression (L1, C = 0.14)¹ | 0.7832 | 0.9064 | 0.2345 | 0.2106 | 0.8249 |
+| **XGBoost**² | **0.9654** | **0.9521** | **0.0303** | **0.0414** | **0.9652** |
 
-# Repository Structure
+¹ C chosen by 5-fold CV (CV accuracy 0.7806); metrics computed on the training set.
+² Tuned by grid search over 32,000 configurations on a 25% validation split; final
+parameters `n_estimators=36, max_depth=3, learning_rate=0.1, subsample=0.9, colsample_bytree=0.85`.
+Metrics computed on that validation split.
 
-Since the total number of files are small, for coding convinience, all files (data files, notebooks and paper files) are in one single folder.
+**Kaggle (XGBoost submission):** public 0.95195 (rank 53), private 0.91025 (rank 108).
 
-# Paper File
+The most important XGBoost features are ADL, MMSE, and FunctionalAssessment, followed by
+BehavioralProblems and MemoryComplaints.
 
-EARLY DETECTION OF ALZHEIMER'S DISEASE.pdf
+## Repository structure
 
-# Data Files
+```
+├── data/
+│   ├── train.csv                  # 1,504 labelled patients (target: Diagnosis)
+│   ├── test.csv                   # 645 unlabelled patients for Kaggle scoring
+│   └── sample_submission.csv      # Kaggle submission format
+├── notebooks/
+│   ├── project_LR.ipynb           # logistic regression (L1 / L2, CV over C)
+│   ├── project_XGBoost.ipynb      # XGBoost grid search (final model)
+│   └── project_random_forest.ipynb  # random forest (exploratory, not in report)
+├── submissions/                   # Kaggle prediction files written by the notebooks
+└── report/
+    ├── early_detection_of_alzheimers_disease.pdf
+    ├── references.bib
+    └── references/                # cited papers
+```
 
-train.csv: Training dataset for model development.
+## Running the notebooks
 
-test.csv: Test dataset for hyperparameter tuning.
+```bash
+conda create -n alzheimer python=3.10
+conda activate alzheimer
+pip install -r requirements.txt
+jupyter notebook notebooks/
+```
 
-sample_submission.csv: predicted dataset to be submitted for Kaggle evaluation.
+Notebooks read data from `../data/` and write predictions to `../submissions/`, so run
+them from the `notebooks/` directory. The XGBoost grid search takes roughly 45–60 minutes
+on a 4-core laptop CPU.
 
-# Notebooks
+## Data
 
-## project_LR.ipynb
-
-Implements Logistic Regression for binary classification of Alzheimer’s presence.
-
-Includes data preprocessing, feature scaling, and model evaluation.
-
-## project_XGBoost.ipynb
-
-Trains an XGBoost model, typically well-suited for tabular data.
-
-Contains hyperparameter tuning steps and comparison with baseline methods.
-
-## project_random_forest.ipynb
-
-Similar as previous two, but not included in the paper.
-
+Alzheimer's Disease Dataset (Rabie El Kharoua, 2023), distributed via the course Kaggle competition.
