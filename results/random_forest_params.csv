@@ -1,0 +1,6 @@
+fold,clf__max_depth,clf__max_features,clf__min_samples_leaf,clf__n_estimators
+0,16.0,0.8,4,542
+1,,0.5,3,407
+2,16.0,0.8,4,542
+3,16.0,0.8,4,542
+4,8.0,0.5,4,182

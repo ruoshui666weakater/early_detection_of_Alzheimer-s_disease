@@ -1,3 +1,13 @@
 .ipynb_checkpoints/
 __pycache__/
 .DS_Store
+
+# LaTeX build files (the built PDF is copied to report/revised_2026.pdf)
+report/revised_src/*.aux
+report/revised_src/*.bbl
+report/revised_src/*.blg
+report/revised_src/*.fdb_latexmk
+report/revised_src/*.fls
+report/revised_src/*.log
+report/revised_src/*.out
+report/revised_src/main.pdf

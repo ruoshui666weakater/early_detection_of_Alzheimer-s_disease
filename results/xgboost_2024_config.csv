@@ -1,0 +1,3 @@
+evaluation,accuracy,sd
+2024 split (the one it was selected on),0.9574468085106383,
+outer 5-fold CV,0.952126245847176,0.006049340362741678
